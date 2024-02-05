@@ -1,4 +1,7 @@
 import pandas as pd 
+import dash
+from dash import html, doc, Input, Output, State
+import pandas as pd
 
 #importing the dataset
 data = pd.read_csv("data/Real_Estate.csv")
@@ -24,3 +27,15 @@ model = LinearRegression()
 
 #training
 model.fit(x_train,y_train)
+
+#Initialize the Dash app
+app = dash.Dash(__name__)
+
+#UI of app
+app.layout = html.Div([
+    html.Div([
+        html.H1("Real Estate Price Predcition", style = {'text-align': 'center'}),
+
+        html.Div(id = 'distance_to_mrt', type = 'number', place = )
+    ])
+])
